@@ -1,8 +1,13 @@
 import React from 'react'
-import './App.css'
+import ArticleList from './components/ArticleList'
+import articles from './fixtures'
 
 function App() {
-  return <div className="App">Learn React</div>
+  return (
+    <div className="App">
+      <ArticleList articles={articles} />
+    </div>
+  )
 }
 
 export default App
