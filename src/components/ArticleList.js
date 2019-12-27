@@ -1,20 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Article from './Article'
 import PropTypes from 'prop-types'
 
-function ArticleList(props) {
-  const [articleId, setArticleId] = useState(null)
+import accordion from '../decorators/accordion'
 
-  const toggleOpenArticle = (articleId) => (ev) => {
-    setArticleId(articleId)
-  }
-
-  const articleElements = props.articles.map((article) => (
+const ArticleList = ({ articles, toggleOpenItem, openItemId }) => {
+  const articleElements = articles.map((article) => (
     <li key={article.id}>
       <Article
         article={article}
-        isOpen={articleId === article.id}
-        toggleOpen={toggleOpenArticle(article.id)}
+        isOpen={openItemId === article.id}
+        toggleOpenItem={toggleOpenItem}
       />
     </li>
   ))
@@ -22,4 +18,4 @@ function ArticleList(props) {
   return <ul>{articleElements}</ul>
 }
 
-export default ArticleList
+export default accordion(ArticleList)
