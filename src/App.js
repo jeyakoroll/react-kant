@@ -2,7 +2,8 @@ import React, { useRef, useEffect } from 'react'
 import { Select } from 'antd'
 import ArticleList from './components/ArticleList'
 import ArticleChart from './components/ArticleChart'
-import UserForm from './components/UserForm'
+// import UserForm from './components/UserForm'
+import Calendar from './components/Calendar'
 
 import articles from './api/fixtures'
 
@@ -15,7 +16,8 @@ function App() {
 
   return (
     <div className="App">
-      <UserForm />
+      <Calendar />
+      {/* <UserForm /> */}
       <Select
         mode="multiple"
         style={{ width: '100%' }}

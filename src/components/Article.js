@@ -1,18 +1,18 @@
-import React, { useRef, useEffect } from 'react'
+import React from 'react'
 
 function Article({ article, isOpen, toggleOpenItem }) {
-  const titleRef = useRef()
-
-  useEffect(() => {
-    console.log('---', 'rendering', titleRef.current)
-  })
-
-  const handleBtnClick = () => toggleOpenItem(article.id)
+  const handleBtnClick = (ev) => {
+    if (ev.target.innerText === 'open') {
+      toggleOpenItem(article.id)
+    } else {
+      toggleOpenItem(null)
+    }
+  }
 
   return (
     <div>
       <div>
-        <h3 ref={titleRef}>{article.title}</h3>
+        <h3>{article.title}</h3>
         <button onClick={handleBtnClick}>{isOpen ? 'close' : 'open'}</button>
       </div>
       {isOpen && <section>{article.text}</section>}
