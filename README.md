@@ -1,1 +1,5 @@
-## In this I wanna learn deeply react hooks, and try how to work with antd components library
+## yarn
+
+## Create .npmrc in main folder of app. Put in: scripts-prepend-node-path=true
+
+## yarn start
